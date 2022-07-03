@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=PT+Sans&display=swap" rel="stylesheet">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@400;500;800&family=Lato&family=Orbitron:wght@700&family=Rajdhani:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>OceanNFT</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+        <div class="header__main">
+        <div class="header_logo">
+            <ul class="header__left">
+                <li><svg 
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="39px" height="38px">
+                   <image  x="0px" y="0px" width="39px" height="38px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAmCAMAAABwIXKiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACu1BMVEX/AH//////f///AP//qv//AP//f3//AAD/VarGR/HLPu+8N+/HPPC6OO+wQ+//Vf/UQfGsQ+7hS/DVQvG5OO6fUOvfSPKqQ+2cUeubXe/pTvPUQfGMXervUPS4OO+pRO2BZuf7VPW4Oe99bul/ceP/Vff9VvbhR/OpRe17b+lweef/VvVufudkfOD/V/P/VvbuTfTTQfGpRu2ZU+teiuT/Vvb8VPXFOvCZVOuKYup6cOlrfudSkeP/Vvf/VfbSQfG2Ou5cjeZPmeRVnOP/VfTEOvCnR+1Pm+RJpur/WfT/VvWJY+pejedjjuP/V/f/Vf/5VPXsTfOYVet7ceh0fOhaluFPnuRNouj/WvD/VvX/VvXoS/DeR/GYVuyNYutpgedbjuVYl+X/Vfb6VfbvTfTTQPPBOO60Ou6lSO2qVeOFZud4dOhei+X6U/bsTPTfR/LYRve0POGWWexrf+f/VfH5UvXEO++zPu+lSu55cun3Uvd9cOjnSvPBOO+JY+nbRfLPP/GVV+uTZO/YPu/OPvCdVuvLPe+yPO6lSOu/N++yPO7GOfGyNujHPO+5OO6qRO3UQvHGPO+4OO7iSPLGPPCpRO2aUuvhSPLGO++aU+uLYOnvT/TFO++pRe2LYenvTvPTQvG3Oe6ZU+uKYer7VPXgSPLFO/C3Oe2oRu2ZVOuKYel7b+jEO++2Oe2JYul7cOdsfeb/VvbuTvTfR/G1Oe2nR+xdjOX/VvX7VfXtTvPgR/LDOu+nR+16cedrfuf6VPXtTfPfR/LSQfGYVeuIY+lsf+dcjeXQQPDCOu61O+6mR+yYVut5cehrf+beR/LCOu+1Ou6HY+m0Ou2lSOxqgOeHZel4cujPQPCVV+rrTfTdRvLOP/DBOe6zO+6kSeyVV+uGZemyPO6kSuyyPO2jSuzAOO+yPe7AOe////+9NGuuAAAAjXRSTlMCAQIBAwICAQMSMa/g/kEDcd8i3/6AoP7vIVL+v+D+/kGA/t4SIe7+/v6AoO8hUv7+/v7+wOD+/v7+/v5BgP7+/v7fEpD+/u8xYd/+gBJhIYDv/r8hEXEhIu+AIqHfQWHvMVHfYEDf74ASQcCA/v6fIRGQ3hLfgYDu70FwgP6gv/7eISHuQXH+gK/eEiEEzP8vAAAAAWJLR0QB/wIt3gAAAAd0SU1FB+YHAxExAHfl7zQAAAKkSURBVDjLbVQFQxVBEF5nbvWZ2N3diomNit2K3S0GdovYjSJYKAoq2KJYWNj6FBUsRDEwUP+GG7d3u8C8e3vv7X7z7cw3s0tIPgACzJAPFghD5A8zyg0oIMmPROIshkQJAwuVI0chpUgKIBLCvS3JYA4cRjmQgIdIFpQrilKg0GZjOAoej7OAVIcpXx4jC43xeeSk/EBBxWuDGSEScDJUVqgwygmHHDhfrp2KFC3m+CCXgW1CCdqSsZePWCketruE5iVHSnJsiyVLhZXeU0aFqlQQEruhMdKy4XsjypWvYExTUPGhCqdiZKV9EfsPVNY8XT5N3yoHww9VrRZ1uLpSytxX1b/Gkcjw6JpHo47Vqi0K7hAQLQmEOnVj6sVGH69/4mSDhmAYcX8ydKO4mPjYU6fPnD13vnETLREDB9i0WVzzeN8LF1u0TLh0uZUqnoxP75HWiW2uXPVte+26X7v2HW501AmJkz5Ap6TON2/d7nLH/65fQvK9rt262zlbbr7CMyAx6f6Dh496+Pd8/CT56bNevbVKqSYVUvXpy3De5y9SXvZ79br/AD1F9wgBDBwEg4eketPepAx9Oyxw+IiRbg1U/wnkqNFjcOw4b9q79+MnwMRJk+WKj6sz8xLAKUlTp8H0GTNnBc2e82Gu3glIDDUD5gXPXwALgxalf1xsLDA+C5064pKlwakZy5av+JS+MlDLAg1d+HfV58wvX799z/qxOsdhIEpkG70mMyPk56+stXrVhS7U+AsQui7kd/b6DVqLihzNfmHPxk1//mZvlhOWPaf0Q1S9y95b/m3dpueK4lYixiES6O07LK1IOfoP3fOwcxfkMr6v7oiQh6HdL2ihOkhOH6lRJUJMJj1+dwadqxnz2hGd3CjofWVi0HKvMgr/AXRAitnh2jRmAAAAAElFTkSuQmCC" />
+                   </svg></li>
+                <li class="header__name"><img src="images/OceanNFT.svg"></li>
+            </ul>
+
+        </div>
+        <div class="bar-dekstop">
+        <nav class="header__menu">
+            <ul class="menu__list">
+                <li><a class="menu__name">Market</a></li>
+                <li><a class="menu__name">Features</a></li>
+                <li><a class="menu__name">Community</a></li>
+            </ul>
+        </nav>
+        </div>
+
+        <div id="burg">
+            <a>
+                <span class="burg_span bar" id="top"></span>
+                <span class="burg_span-middle bar" id="middle"></span>
+                <span class="burg_span bar" id="bottom"></span>
+                
+            </a>
+        </div>
+
+        <div class="mobile-tab">
+            <nav class="header__mobile">
+                <ul>
+                    <li><a class="menu__name">Market</a></li>
+                    <li><a class="menu__name">Features</a></li>
+                    <li><a class="menu__name">Community</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="menu__icons">
+            <ul class="icons__list">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                  </svg></li>
+            </ul>
+        </div>
+
+    </div>
+     </div>
+    </header>
+
+    <main class="main">
+        <section class="blure"></section>
+    <section class="explore">
+        <div class="container">
+            <div class="exmain">
+            <div class="expright">
+            <div class="explore__textmain">
+                <p>
+                    Discover, collect, and <br> sell <span class="hero_title-control">Timeless</span> NFTs
+                </p>
+                <p class="explore__text">
+                    The world`s first and largest digital marketplace for crypto <br>
+                    collectibles and non- fungible tokens (NFTs).
+                </p>
+            </div>
+            <div class="exbutton">
+                <button class="main__button" type="button">
+                    Explore
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                </button>
+                <a href="#" class="expNFT">Create NFT’s</a>
+            </div>
+            <div class="item_mobile">
+            <ul class="exitem">
+                <li class="exlist"><p class="first listelement">35m+</p><p class="second">Artwork</p></li>
+                <li class="exlist"><p class="first listelement">18m+</p><p class="second">Auctions</p></li>
+                <li class="exlist"><p class="first">500k+</p><p class="second">Artists</p></li>
+            </ul>
+        </div>
+        </div>
+        <div class="exright">
+            <div class="extight__main">
+                <div class="hero">
+                    <img class="hero__img" src="images/image-hero.png">
+                </div>
+                <div class="hero__box">
+                    <div class="box__left">
+                        <p class="box__title">3D Abstract Hand</p>
+                        <div class="box__author">
+                            <img src="images/box_hero/Ellipse 276.png">
+                            <p class="author__name">@jhonartist</p>
+                            <img class="images__acc" src="images/box_hero/image 46.png">
+                        </div>
+                        <p class="hero__textdown">Reserve price</p>
+                        <div class="hero__price">
+                            <img class="eth__price" src="images/box_hero/Group 1879.png" width="70" height="20" >
+                            <p class="price__second">($29,8846)</p>
+                        </div>
+
+                    </div>
+                    <div class="box__right">
+                        <p class="right__text">Auction Ends in</p>
+                        <div class="hero__time">
+                            <ul class="time__list">
+                                <li class="time__item"><p class="time__title">18</p><p class="time__second">Hours</p></li>
+                                <li class="time__item"><p class="time__title">25</p><p class="time__second">Mins</p></li>
+                                <li class="time__item"><p class="time__title">44</p><p class="time__second">Secs</p></li>
+                            </ul>
+                        </div>
+                        <div class="box__button">
+                            <button class="confirm_btn">
+                                Place Bid
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                  </svg>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+ 
+    </div>
+    </div>
+    </section>
+    <section class="brand">
+        <div class="container">
+        <ul class="brand__list">
+            <li class="brand__item">
+                <svg class="brand__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" height="50">
+               <image class="brand__svg" xlink:href="data:img/png;base64,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" />
+               </svg>
+            </li>
+            <li class="brand__item">
+                <svg class="brand__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" height="50">
+               <image  class="brand__svg" xlink:href="data:img/png;base64,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" />
+               </svg> 
+            </li>
+            <li class="brand__item">
+                <svg class="brand__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" height="50">
+                <image  class="brand__svg" xlink:href="data:img/png;base64,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" />
+                </svg>
+            </li>
+            <li class="brand__item">
+                <svg class="brand__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" height="50">
+                <image  class="brand__svg" xlink:href="data:img/png;base64,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" />
+                </svg>
+            </li>
+        </ul>
+    </div>
+    </section>
+    <section class="top">
+        <div class="container">
+            <p class="card__title">Top NFT`s now</p>
+            <!-- <div class="top_box_dekstop">
+            <div class="top__box">
+                <div class="top__box-img">
+                    <img class="top__box-img" src="images/top/second_top.png">
+                </div>
+                <div class="box__top-card">
+                    <div class="top__box-left">
+                        <p class="top__box-title">3D Abstract Hand</p>
+                        <div class="top__name">
+                            <img class="top__name-img" src="images/top/Ellipse 276 (1).png" width="27" height="27">
+                            <p class="top__name-main">@jhonartist</p>
+                            <img class="top__accept" src="images/box_hero/image 46.png" width="11" height="12">
+                        </div>
+                        <p class="top__text">Reserve price</p>
+                        <div class="top__price">
+                            <img class="top_eth__price" src="images/box_hero/Group 1879.png" width="70" height="20" >
+                            <p class="top_price__second">($29,8846)</p>
+                        </div>
+                    </div>
+                    <div class="top_box__right">
+                        <p class="top_right__text">Auction Ends in</p>
+                        <div class="top_hero__time">
+                            <ul class="top_time__list">
+                                <li class="top_time__item"><p class="top_time__title">18</p><p class="top_time__second">Hours</p></li>
+                                <li class="top_time__item"><p class="top_time__title">25</p><p class="top_time__second">Mins</p></li>
+                                <li class="top_time__item"><p class="top_time__title">44</p><p class="top_time__second">Secs</p></li>
+                            </ul>
+                        </div>
+                        <div class="top_box__button">
+                            <button class="top_confirm_btn">
+                                Place Bid
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                  </svg>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="top__box">
+                <div class="top__box-img">
+                    <img class="top__box-img" src="images/top/first_top.png">
+                </div>
+                <div class="box__top-card">
+                    <div class="top__box-left">
+                        <p class="top__box-title">3D Abstract Hand</p>
+                        <div class="top__name">
+                            <img class="top__name-img" src="images/top/Ellipse 276 (1).png" width="27" height="27">
+                            <p class="top__name-main">@jhonartist</p>
+                            <img class="top__accept" src="images/box_hero/image 46.png" width="11" height="12">
+                        </div>
+                        <p class="top__text">Reserve price</p>
+                        <div class="top__price">
+                            <img class="top_eth__price" src="images/box_hero/Group 1879.png" width="70" height="20" >
+                            <p class="top_price__second">($29,8846)</p>
+                        </div>
+                    </div>
+                    <div class="top_box__right">
+                        <p class="top_right__text">Auction Ends in</p>
+                        <div class="top_hero__time">
+                            <ul class="top_time__list">
+                                <li class="top_time__item"><p class="top_time__title">18</p><p class="top_time__second">Hours</p></li>
+                                <li class="top_time__item"><p class="top_time__title">25</p><p class="top_time__second">Mins</p></li>
+                                <li class="top_time__item"><p class="top_time__title">44</p><p class="top_time__second">Secs</p></li>
+                            </ul>
+                        </div>
+                        <div class="top_box__button">
+                            <button class="top_confirm_btn">
+                                Place Bid
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                  </svg>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="top__box">
+                <div class="top__box-img">
+                    <img class="top__box-img" src="images/top/thirt_top.png">
+                </div>
+                <div class="box__top-card">
+                    <div class="top__box-left">
+                        <p class="top__box-title">3D Abstract Hand</p>
+                        <div class="top__name">
+                            <img class="top__name-img" src="images/top/Ellipse 276 (1).png" width="27" height="27">
+                            <p class="top__name-main">@jhonartist</p>
+                            <img class="top__accept" src="images/box_hero/image 46.png" width="11" height="12">
+                        </div>
+                        <p class="top__text">Reserve price</p>
+                        <div class="top__price">
+                            <img class="top_eth__price" src="images/box_hero/Group 1879.png" width="70" height="20" >
+                            <p class="top_price__second">($29,8846)</p>
+                        </div>
+                    </div>
+                    <div class="top_box__right">
+                        <p class="top_right__text">Auction Ends in</p>
+                        <div class="top_hero__time">
+                            <ul class="top_time__list">
+                                <li class="top_time__item"><p class="top_time__title">18</p><p class="top_time__second">Hours</p></li>
+                                <li class="top_time__item"><p class="top_time__title">25</p><p class="top_time__second">Mins</p></li>
+                                <li class="top_time__item"><p class="top_time__title">44</p><p class="top_time__second">Secs</p></li>
+                            </ul>
+                        </div>
+                        <div class="top_box__button">
+                            <button class="top_confirm_btn">
+                                Place Bid
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                  </svg>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div> -->
+            <div class="top__optimize">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="top__box">
+                        <div class="top__box-img">
+                            <img class="top__box-img" src="images/top/first_top.png">
+                        </div>
+                        <div class="box__top-card">
+                            <div class="top__box-left">
+                                <p class="top__box-title">3D Abstract Hand</p>
+                                <div class="top__name">
+                                    <img class="top__name-img" src="images/top/Ellipse 276 (1).png" width="27" height="27">
+                                    <p class="top__name-main">@jhonartist</p>
+                                    <img class="top__accept" src="images/box_hero/image 46.png" width="11" height="12">
+                                </div>
+                                <p class="top__text">Reserve price</p>
+                                <div class="top__price">
+                                    <img class="top_eth__price" src="images/box_hero/Group 1879.png" width="70" height="20" >
+                                    <p class="top_price__second">($29,8846)</p>
+                                </div>
+                            </div>
+                            <div class="top_box__right">
+                                <p class="top_right__text">Auction Ends in</p>
+                                <div class="top_hero__time">
+                                    <ul class="top_time__list">
+                                        <li class="top_time__item"><p class="top_time__title">18</p><p class="top_time__second">Hours</p></li>
+                                        <li class="top_time__item"><p class="top_time__title">25</p><p class="top_time__second">Mins</p></li>
+                                        <li class="top_time__item"><p class="top_time__title">44</p><p class="top_time__second">Secs</p></li>
+                                    </ul>
+                                </div>
+                                <div class="top_box__button">
+                                    <button class="top_confirm_btn">
+                                        Place Bid
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                          </svg>
+                                    </button>
+                                </div>
+        
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="top__box">
+                        <div class="top__box-img">
+                            <img class="top__box-img" src="images/top/second_top.png">
+                        </div>
+                        <div class="box__top-card">
+                            <div class="top__box-left">
+                                <p class="top__box-title">3D Abstract Hand</p>
+                                <div class="top__name">
+                                    <img class="top__name-img" src="images/top/Ellipse 276 (1).png" width="27" height="27">
+                                    <p class="top__name-main">@jhonartist</p>
+                                    <img class="top__accept" src="images/box_hero/image 46.png" width="11" height="12">
+                                </div>
+                                <p class="top__text">Reserve price</p>
+                                <div class="top__price">
+                                    <img class="top_eth__price" src="images/box_hero/Group 1879.png" width="70" height="20" >
+                                    <p class="top_price__second">($29,8846)</p>
+                                </div>
+                            </div>
+                            <div class="top_box__right">
+                                <p class="top_right__text">Auction Ends in</p>
+                                <div class="top_hero__time">
+                                    <ul class="top_time__list">
+                                        <li class="top_time__item"><p class="top_time__title">18</p><p class="top_time__second">Hours</p></li>
+                                        <li class="top_time__item"><p class="top_time__title">25</p><p class="top_time__second">Mins</p></li>
+                                        <li class="top_time__item"><p class="top_time__title">44</p><p class="top_time__second">Secs</p></li>
+                                    </ul>
+                                </div>
+                                <div class="top_box__button">
+                                    <button class="top_confirm_btn">
+                                        Place Bid
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                          </svg>
+                                    </button>
+                                </div>
+        
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="top__box">
+                        <div class="top__box-img">
+                            <img class="top__box-img" src="images/top/thirt_top.png">
+                        </div>
+                        <div class="box__top-card">
+                            <div class="top__box-left">
+                                <p class="top__box-title">3D Abstract Hand</p>
+                                <div class="top__name">
+                                    <img class="top__name-img" src="images/top/Ellipse 276 (1).png" width="27" height="27">
+                                    <p class="top__name-main">@jhonartist</p>
+                                    <img class="top__accept" src="images/box_hero/image 46.png" width="11" height="12">
+                                </div>
+                                <p class="top__text">Reserve price</p>
+                                <div class="top__price">
+                                    <img class="top_eth__price" src="images/box_hero/Group 1879.png" width="70" height="20" >
+                                    <p class="top_price__second">($29,8846)</p>
+                                </div>
+                            </div>
+                            <div class="top_box__right">
+                                <p class="top_right__text">Auction Ends in</p>
+                                <div class="top_hero__time">
+                                    <ul class="top_time__list">
+                                        <li class="top_time__item"><p class="top_time__title">18</p><p class="top_time__second">Hours</p></li>
+                                        <li class="top_time__item"><p class="top_time__title">25</p><p class="top_time__second">Mins</p></li>
+                                        <li class="top_time__item"><p class="top_time__title">44</p><p class="top_time__second">Secs</p></li>
+                                    </ul>
+                                </div>
+                                <div class="top_box__button">
+                                    <button class="top_confirm_btn">
+                                        Place Bid
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                          </svg>
+                                    </button>
+                                </div>
+        
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+        </div>
+    </section>
+    <section class="collect-list">
+        <div class="container">
+            <p class="collect__title">Explore Collections</p>
+            <div class="collect__main">
+                <div class="collect__box">
+                    <ul class="tabs__nav collect__list">
+                        <li data-tab="#tab-1" class="tabs__nav-btn collect__item"><p class="collect__link">Photography</p></li>
+                        <li data-tab="#tab-2" class="tabs__nav-btn collect__item"><p class="collect__link">Sports</p></li>
+                        <li data-tab="#tab-1" class="tabs__nav-btn collect__item"><p class="collect__link">Brands</p></li>
+                        <li data-tab="#tab-2" class="tabs__nav-btn collect__item"><p class="collect__link">Collectibles</p></li>
+                        <li data-tab="#tab-1" class="tabs__nav-btn collect__item"><p class="collect__link">Art</p></li>
+                        <li data-tab="#tab-2" class="tabs__nav-btn collect__item"><p class="collect__link">Utility</p></li>
+                        <li data-tab="#tab-1" class="tabs__nav-btn collect__item"><p class="collect__link">Brands</p></li>
+                        <li data-tab="#tab-2" class="tabs__nav-btn collect__item"><p class="collect__link">Collectibles</p></li>
+                    </ul>
+                    <div class="collect__view">
+                        <p class="coll-view__text">View all  <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                          </svg></p>
+                    </div>
+                </div>
+                <div class="tabs__content collect__img">
+                   <div class="tabs__item" id="tab-1">
+                        <img class="collect-img" src="images/girl.png" width="185" height="347">
+                    </div>
+                   <div class="tabs__item" id="tab-2">
+                        <img class="collect-img" src="images/cardi.png" width="145" height="387">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio">
+        <div class="container">
+            <p class="port__title">Explore Collections</p>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="swiper-control">
+                        <div class="port__card">
+                            <img class="port__img" src="images\unsplash_MtSF6U6gy2Q.png">
+                            <div class="port__bg">
+                                <img class="port__bg-img" src="images/portbg.png">
+                            </div>
+                            <div class="port__inf">
+                                <p class="port__title-inf">Jhones Nickey</p>
+                            </div>
+                            <div class="port__inf-sec">
+                                <p class="sec_text">@jhonartist</p>
+                                <img class="sec-img" src="images/box_hero/image 46.png">
+                            </div>
+                            <ul class="port__list">
+                                <li class="port__item">
+                                    <p class="port__item-title">125</p>
+                                    <p class="port__item-text">Folowers</p>
+                                </li>
+                                <li class="port__item">
+                                    <p class="port__item-title">256</p>
+                                    <p class="port__item-text">Following</p>
+                                </li>
+                                <li class="port__item">
+                                    <p class="port__item-title">129</p>
+                                    <p class="port__item-text">Artworks</p>
+                                </li>
+                            </ul>
+                            <button class="port__btn">Follow</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-control">
+                        <div class="port__card">
+                            <img class="port__img" src="images\unsplash_MtSF6U6gy2Q.png">
+                            <div class="port__bg">
+                                <img class="port__bg-img" src="images/portbg.png">
+                            </div>
+                            <div class="port__inf">
+                                <p class="port__title-inf">Cody Fisher</p>
+                            </div>
+                            <div class="port__inf-sec">
+                                <p class="sec_text">@codyfishe</p>
+                                <img class="sec-img" src="images/box_hero/image 46.png">
+                            </div>
+                            <ul class="port__list">
+                                <li class="port__item">
+                                    <p class="port__item-title">356</p>
+                                    <p class="port__item-text">Folowers</p>
+                                </li>
+                                <li class="port__item">
+                                    <p class="port__item-title">456</p>
+                                    <p class="port__item-text">Following</p>
+                                </li>
+                                <li class="port__item">
+                                    <p class="port__item-title">89</p>
+                                    <p class="port__item-text">Artworks</p>
+                                </li>
+                            </ul>
+                            <button class="port__btn">Follow</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-control">
+                        <div class="port__card">
+                            <img class="port__img" src="images\unsplash_MtSF6U6gy2Q.png">
+                            <div class="port__bg">
+                                <img class="port__bg-img" src="images/portbg.png">
+                            </div>
+                            <div class="port__inf">
+                                <p class="port__title-inf">Jerome Bell</p>
+                            </div>
+                            <div class="port__inf-sec">
+                                <p class="sec_text">@jeromebt</p>
+                                <img class="sec-img" src="images/box_hero/image 46.png">
+                            </div>
+                            <ul class="port__list">
+                                <li class="port__item">
+                                    <p class="port__item-title">536</p>
+                                    <p class="port__item-text">Folowers</p>
+                                </li>
+                                <li class="port__item">
+                                    <p class="port__item-title">789</p>
+                                    <p class="port__item-text">Following</p>
+                                </li>
+                                <li class="port__item">
+                                    <p class="port__item-title">54</p>
+                                    <p class="port__item-text">Artworks</p>
+                                </li>
+                            </ul>
+                            <button class="port__btn">Follow</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    </section>
+    <section class="seller">
+        <div class="container">
+            <div class="seller_title">
+                <p class="sell_main-title">Top Sellers this <span class="sellers__title-control">Month</span></p>
+            </div>
+            <p class="seller_text"> Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+                sint. Velit officia consequat duis enim minim mollit.</p>
+            <ul class="seller__list">
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">1</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Eleanor Pena</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">74875</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-green">
+                        <p class="sell-type_text-green">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">2</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Savannah Nguyen</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">18599</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-red">
+                        <p class="sell-type_text-red">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">3</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Arlene McCoy</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">45904</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-green">
+                        <p class="sell-type_text-green">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">4</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Esther Howard</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">16627</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-red">
+                        <p class="sell-type_text-red">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">5</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Robert Fox</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">9631</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-green">
+                        <p class="sell-type_text-green">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">6</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Darlene Robertson</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">70443</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-green">
+                        <p class="sell-type_text-green">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">7</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Jacob Jones</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">13671</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-green">
+                        <p class="sell-type_text-green">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">8</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Jerome Bell</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">39235</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-red">
+                        <p class="sell-type_text-red">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">9</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Wade Warren</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">43359</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-red">
+                        <p class="sell-type_text-red">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">10</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Jane Cooper</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">95554</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-red">
+                        <p class="sell-type_text-red">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">11</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Kristin Watson</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">20796</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-green">
+                        <p class="sell-type_text-green">+468.48%</p>
+                    </div>
+                </li>
+                <li class="sell-item">
+                    <div class="sel-act"><p class="sel-act_text">12</p></div>
+                    <div class="sell-img">
+                        <img class="sell-img_pict" src="images/sellers.png" width="50"
+                        height="50">
+                    </div>
+                    <div class="main-sell">
+                        <p class="sell-text">Kathryn Murphy</p>
+                        <div class="sell-eth">
+                            <svg class="sell-eth_img" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="9px" height="15px">
+                            <image  x="0px" y="0px" width="9px" height="15px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAQAAACcwS2GAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBhoUAQnHxZItAAAAk0lEQVQY012PsRXCMBBDP4b3qDIAHoAFvAAVVRYIA3gB6M0aLJD0ZAAY4Jgm6UVhhySo0tPdSTooUMU/1OqwFqJMj8wdgDwNEBR+EpHslFSBA52oy72ngQ2oZzYeuGzVcF7k7PE73ozEsjfQ0TtGau50wIdbGSnIlBQUZZqCdJXJZEpz90qtTM/VS/J65e5L8TixL9deO3nDMhRdAAAAAElFTkSuQmCC" />
+                            </svg>
+                            <p class="sell-eth_text">4339</p>
+                        </div>
+                    </div>
+                    <div class="seller__type-red">
+                        <p class="sell-type_text-red">+468.48%</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-set"></div>
+            <div class="about__card">
+                <div class="about__card-main">
+                    <p class="about__title">What are NFT`s ?</p>
+                    <p class="about__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Interdum quis amet, faucibus lorem. Lectus amet odio quis sed
+                        adipiscing adipiscing magna non. Nullam turpis faucibus
+                        ridiculus suscipit. Et blandit suspendisse curabitur eu congue
+                        dui ut.
+                      </p>
+                </div>
+                <div class="about__card-second">
+                    <a class="about__link"> Learn more </a>
+                    <a class="about__link-second">Watch video </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="subs">
+        <div class="container">
+            <div class="subs-box">
+                <div class="subs-main">
+                    <p class="subs__title">Subscribe to us</p>
+                    <p class="subs__text">
+                        Specially developed to help restore a more youthful appearance
+                        with improved radiance and bounce.
+                    </p>
+                    <div class="subs__form">
+                        <input class="subs__input" type="email" name="email" placeholder="Your work email address">
+                        <button class="subs__btn" type="submit">Subscribe</button>
+                    </div>
+                </div>
+                <div class="subs__photo">
+                    <img src="images/subs.png" class="subs-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="foot-first">
+                <div class="footer-main">
+                <a href="" class="footer-logo">
+                    <svg 
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="39px" height="38px">
+                   <image  x="0px" y="0px" width="39px" height="38px"  xlink:href="data:img/png;base64,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" />
+                   </svg> OceanNFT
+                </a>
+                <p class="foot-text">
+                    Lorem ipsum dolor amet, consectetur adipiscing elit. Eget nisl nunc
+                    quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.
+                </p>
+                <ul class="foot-list">
+                    <li class="foot-item"><img src="images/BG.png "><img class="footer-icons" src="images/footer/Path.png"></li>
+                    <li class="foot-item"><img src="images/BG.png"><img class="footer-icons" src="images/footer/Path.png"></li>
+                    <li class="foot-item"><img src="images/BG.png"><img class="footer-icons" src="images/footer/Path.png"></li>
+                    <li class="foot-item"><img src="images/BG.png"><img class="footer-icons" src="images/footer/Path.png"></li>
+                </ul>
+            </div>
+            <div class="foot-market">
+                <p class="market_title">Market place</p>
+                <ul class="market__list">
+                    <li class="market_item"><a href="#" class="market-link">Overview</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Features <span class="market-span">NEW</span></a></li>
+                    <li class="market_item"><a href="#" class="market-link">Tutorials</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Pricing</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Releases</a></li>
+                </ul>
+            </div>
+            <div class="foot-market">
+                <p class="market_title">Collectibles</p>
+                <ul class="market__list">
+                    <li class="market_item"><a href="#" class="market-link">About</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Press</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Careers</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Contact</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Partners</a></li>
+                </ul>
+            </div>
+            <div class="foot-market">
+                <p class="market_title">Support</p>
+                <ul class="market__list">
+                    <li class="market_item"><a href="#" class="market-link">Help Center</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Safety Center</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Legal</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Privacy policy</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Status</a></li>
+                </ul>
+            </div>
+            <div class="foot-market">
+                <p class="market_title">Legal</p>
+                <ul class="market__list">
+                    <li class="market_item"><a href="#" class="market-link">Cookies Policy</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Privacy Policy</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Terms of Service</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Law Enforcement</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Status</a></li>
+                </ul>
+            </div>
+            <div class="foot-market">
+                <p class="market_title">Follow us</p>
+                <ul class="market__list">
+                    <li class="market_item"><a href="#" class="market-link">Facebook</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Twitter</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Dribbble</a></li>
+                    <li class="market_item"><a href="#" class="market-link">Instagram</a></li>
+                    <li class="market_item"><a href="#" class="market-link">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="footer-burg">
+   
+        <div class="footer-main">
+            <a href="" class="footer-logo">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="39px" height="38px">
+                <image  x="0px" y="0px" width="39px" height="38px"  xlink:href="data:img/png;base64,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" />
+                </svg> OceanNFT
+            </a>
+            <p class="foot-text">
+                Lorem ipsum dolor amet, consectetur adipiscing elit. Eget nisl nunc
+                quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.
+            </p>
+            <ul class="foot-list">
+                <li class="foot-item"><img src="images/BG.png "><img class="footer-icons" src="images/footer/Path.png"></li>
+                <li class="foot-item"><img src="images/BG.png"><img class="footer-icons" src="images/footer/Path.png"></li>
+                <li class="foot-item"><img src="images/BG.png"><img class="footer-icons" src="images/footer/Path.png"></li>
+                <li class="foot-item"><img src="images/BG.png"><img class="footer-icons" src="images/footer/Path.png"></li>
+            </ul>
+        </div>
+
+        <ul id="accordion" class="accordion">
+        <li>
+            <div class="link"></i>Market place<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li class="market_item"><a href="#" class="market-link">Overview</a></li>
+                <li class="market_item"><a href="#" class="market-link">Features <span class="market-span">NEW</span></a></li>
+                <li class="market_item"><a href="#" class="market-link">Tutorials</a></li>
+                <li class="market_item"><a href="#" class="market-link">Pricing</a></li>
+                <li class="market_item"><a href="#" class="market-link">Releases</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"></i>Collectibles<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li class="market_item"><a href="#" class="market-link">About</a></li>
+                <li class="market_item"><a href="#" class="market-link">Press</a></li>
+                <li class="market_item"><a href="#" class="market-link">Careers</a></li>
+                <li class="market_item"><a href="#" class="market-link">Contact</a></li>
+                <li class="market_item"><a href="#" class="market-link">Partners</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"></i>Support<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li class="market_item"><a href="#" class="market-link">Help Center</a></li>
+                <li class="market_item"><a href="#" class="market-link">Safety Center</a></li>
+                <li class="market_item"><a href="#" class="market-link">Legal</a></li>
+                <li class="market_item"><a href="#" class="market-link">Privacy policy</a></li>
+                <li class="market_item"><a href="#" class="market-link">Status</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"></i>Legal<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li class="market_item"><a href="#" class="market-link">Cookies Policy</a></li>
+                <li class="market_item"><a href="#" class="market-link">Privacy Policy</a></li>
+                <li class="market_item"><a href="#" class="market-link">Terms of Service</a></li>
+                <li class="market_item"><a href="#" class="market-link">Law Enforcement</a></li>
+                <li class="market_item"><a href="#" class="market-link">Status</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"></i>Follow us<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li class="market_item"><a href="#" class="market-link">Facebook</a></li>
+                <li class="market_item"><a href="#" class="market-link">Twitter</a></li>
+                <li class="market_item"><a href="#" class="market-link">Dribbble</a></li>
+                <li class="market_item"><a href="#" class="market-link">Instagram</a></li>
+                <li class="market_item"><a href="#" class="market-link">LinkedIn</a></li>
+            </ul>
+        </li>
+        </ul>
+
+
+    </div>
+
+    </div>
+    </footer>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+<script src="script.js"></script>
+</body>
+</html>
