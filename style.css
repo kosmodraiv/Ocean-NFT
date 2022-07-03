@@ -1683,6 +1683,7 @@ body.active{
 @media screen and (max-width: 1200px ) {
     .subs-main{
         margin-bottom: 100px;
+        margin-left: 0;
 }
 }
 
